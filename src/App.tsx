@@ -1,5 +1,7 @@
 import type { QuizType } from "@/types";
 import Quiz from "@/components/quiz";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const quizs: QuizType[] = [
   {
@@ -25,12 +27,21 @@ const quizs: QuizType[] = [
 ];
 
 const App = () => {
+  const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
+
+  const handleClick = () => {
+    if (currentQuizIndex < quizs.length - 1) {
+      setCurrentQuizIndex(currentQuizIndex + 1);
+    }
+  };
   return (
     <div className="flex flex-col space-y-4 justify-center items-center min-h-lvh">
       <p className="text-4xl">Quiz App</p>
-      {quizs.map((quiz, index) => (
-        <Quiz key={index} quiz={quiz} index={index} />
-      ))}
+      <Quiz
+        quiz={quizs[currentQuizIndex]}
+        index={currentQuizIndex}
+        onClick={handleClick}
+      />
     </div>
   );
 };
