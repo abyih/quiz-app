@@ -26,7 +26,7 @@ const quizs: QuizType[] = [
 
 const App = () => {
   return (
-    <div className="flex justify-center items-center min-h-lvh">
+    <div className="flex flex-col space-y-4 justify-center items-center min-h-lvh">
       <p className="text-4xl">Quiz App</p>
       {quizs.map((quiz, index) => (
         <Quiz key={index} quiz={quiz} index={index} />
