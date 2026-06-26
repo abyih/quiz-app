@@ -20,10 +20,10 @@ const Quiz = () => {
     setAnswered(true);
     setTimeout(() => {
       setAnswered(false);
+      if (currentQuizIndex < quizs.length - 1) {
+        setCurrentQuizIndex(currentQuizIndex + 1);
+      }
     }, 1000);
-    if (currentQuizIndex < quizs.length - 1) {
-      setCurrentQuizIndex(currentQuizIndex + 1);
-    }
     if (currentQuizIndex == quizs.length - 1) {
       setQuizOver(true);
     }
