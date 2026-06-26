@@ -29,7 +29,7 @@ const quizs: QuizType[] = [
 const App = () => {
   const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
 
-  const handleClick = () => {
+  const handleClick = (correct: boolean) => {
     if (currentQuizIndex < quizs.length - 1) {
       setCurrentQuizIndex(currentQuizIndex + 1);
     }
