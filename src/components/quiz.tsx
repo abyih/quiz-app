@@ -88,15 +88,7 @@ const Quiz = () => {
                     value={selectedValue}
                   >
                     {quiz.choices.map((choice, index) => (
-                      <FieldLabel
-                        key={index}
-                        className={
-                          correctAnswered &&
-                          index.toString() == quiz.correctAnswerIndex.toString()
-                            ? "bg-green-400"
-                            : ""
-                        }
-                      >
+                      <FieldLabel key={index}>
                         <Field orientation="horizontal">
                           <FieldContent>{choice}</FieldContent>
                           <RadioGroupItem value={index.toString()} />
