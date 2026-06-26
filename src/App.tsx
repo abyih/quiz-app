@@ -1,21 +1,36 @@
-interface QuizQuestion {
-  question: string;
-  choices: string[];
-  correctAnswerIndex: number;
-}
+import type { QuizType } from "@/types";
+import Quiz from "@/components/quiz";
 
-const quizQuestions: QuizQuestion[] = [
+const quizs: QuizType[] = [
   {
-    question: "Who was the king that won",
-    choices: [],
+    question: "What is 1 + 1",
+    choices: ["2", "1", "3", "0"],
+    correctAnswerIndex: 0,
+  },
+  {
+    question: "What is 1 + 1",
+    choices: ["2", "1", "3", "0"],
+    correctAnswerIndex: 0,
+  },
+  {
+    question: "What is 1 + 1",
+    choices: ["2", "1", "3", "0"],
+    correctAnswerIndex: 0,
+  },
+  {
+    question: "What is 1 + 1",
+    choices: ["2", "1", "3", "0"],
     correctAnswerIndex: 0,
   },
 ];
 
 const App = () => {
   return (
-    <div className="flex justify-center">
-      <p className="text-3xl">Quiz App</p>
+    <div className="flex justify-center items-center min-h-lvh">
+      <p className="text-4xl">Quiz App</p>
+      {quizs.map((quiz, index) => (
+        <Quiz key={index} quiz={quiz} index={index} />
+      ))}
     </div>
   );
 };
