@@ -3,14 +3,14 @@ import type { QuizType } from "@/types";
 export const quizs: QuizType[] = [
   {
     question:
-      "What is the name of the king who died in a battle against the Mahdists",
+      "What is the name of the two kings who introduced Christianity in the Axumite Empire?",
     choices: [
-      "Emperor Tewodros",
-      "Emperor Haileselassie",
-      "Emperor Yohannes",
-      "Emperor Iyasu",
+      "Ezana and Sayzana",
+      "Kaleb and Gebremeskel",
+      "Yoahnnes and Tewodros",
+      "Gelawdewos and Yikunoamlak",
     ],
-    correctAnswerIndex: 2,
+    correctAnswerIndex: 0,
   },
   {
     question: "What is the population size of Africa?",
@@ -45,15 +45,16 @@ export const quizs: QuizType[] = [
   },
   {
     question:
-      "What is the name of the two kings who introduced Christianity in the Axumite Empire?",
+      "What is the name of the king who died in a battle against the Mahdists",
     choices: [
-      "Ezana and Sayzana",
-      "Kaleb and Gebremeskel",
-      "Yoahnnes and Tewodros",
-      "Gelawdewos and Yikunoamlak",
+      "Emperor Tewodros",
+      "Emperor Haileselassie",
+      "Emperor Yohannes",
+      "Emperor Iyasu",
     ],
-    correctAnswerIndex: 0,
+    correctAnswerIndex: 2,
   },
+
   {
     question: "What is the capital city of Tigray",
     choices: ["Adigrat", "Mekelle", "Maychew", "AbyiAdi"],
