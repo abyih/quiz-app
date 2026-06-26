@@ -1,4 +1,3 @@
-import type { QuizType } from "src/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Field, FieldContent, FieldLabel } from "./ui/field";
@@ -40,7 +39,10 @@ const Quiz = () => {
       {quizOver && (
         <Card className="w-full max-w-sm">
           <CardContent className="flex flex-col items-center">
-            <p>Your have finished the quiz</p>
+            <p className="text-xl font-bold">Your have finished the quiz</p>
+            <p className="text-lg">
+              Your Result is: {answeredQuizs}/{quizs.length}
+            </p>
           </CardContent>
         </Card>
       )}
