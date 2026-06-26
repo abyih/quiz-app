@@ -1,47 +1,26 @@
-import type { QuizType } from "@/types";
 import Quiz from "@/components/quiz";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-
-const quizs: QuizType[] = [
-  {
-    question: "What is 1 + 1",
-    choices: ["2", "1", "3", "0"],
-    correctAnswerIndex: 0,
-  },
-  {
-    question: "What is 1 + 1",
-    choices: ["2", "1", "3", "0"],
-    correctAnswerIndex: 0,
-  },
-  {
-    question: "What is 1 + 1",
-    choices: ["2", "1", "3", "0"],
-    correctAnswerIndex: 0,
-  },
-  {
-    question: "What is 1 + 1",
-    choices: ["2", "1", "3", "0"],
-    correctAnswerIndex: 0,
-  },
-];
+import { Card, CardContent } from "./components/ui/card";
+import { useAtom } from "jotai";
 
 const App = () => {
-  const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
+  const [finished, setFinished] = useState<boolean>(false);
 
-  const handleClick = (correct: boolean) => {
-    if (currentQuizIndex < quizs.length - 1) {
-      setCurrentQuizIndex(currentQuizIndex + 1);
-    }
-  };
+  const [correctAnswered, setCorrectAnswered] = useState<number>(0);
+  // const handleClick = (correct: boolean) => {
+  //   if (currentQuizIndex < quizs.length - 1) {
+  //     setCurrentQuizIndex(currentQuizIndex + 1);
+  //     if (correct) {
+  //       setCorrectAnswered(correctAnswered + 1);
+  //     }
+  //   } else {
+  //     setFinished(true);
+  //   }
+  // };
   return (
     <div className="flex flex-col space-y-4 justify-center items-center min-h-lvh">
       <p className="text-4xl">Quiz App</p>
-      <Quiz
-        quiz={quizs[currentQuizIndex]}
-        index={currentQuizIndex}
-        onClick={handleClick}
-      />
+      <Quiz />
     </div>
   );
 };
